@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Housing Crisis Support — Eviction Help</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --manila:#E8DFC8;
+    --manila-dark:#DBCFAE;
+    --ink:#1B2430;
+    --ink-soft:#3A4453;
+    --paper:#FFFDF8;
+    --stamp:#A8382E;
+    --stamp-dark:#7E2620;
+    --brass:#B08D2B;
+    --line: rgba(27,36,48,0.16);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--manila);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    margin:0;
+    color:var(--ink);
+    font-weight:600;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  /* subtle paper texture via layered gradients */
+  body{
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(0,0,0,0.02) 0, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(0,0,0,0.02) 0, transparent 40%);
+  }
+
+  /* ---------- TOPBAR ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .topbar .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:14px; padding-bottom:14px;
+  }
+  .brand{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.05rem;
+    letter-spacing:0.01em;
+  }
+  .brand span{color:var(--brass);}
+  .topbar a.callnow{
+    background:var(--stamp);
+    color:var(--paper);
+    padding:9px 16px;
+    border-radius:3px;
+    font-size:0.85rem;
+    font-weight:600;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:72px 0 96px;
+  }
+  .notice{
+    background:var(--paper);
+    border:1px solid var(--line);
+    box-shadow:0 1px 0 var(--line), 0 24px 60px -30px rgba(27,36,48,0.35);
+    position:relative;
+    overflow:hidden;
+    padding:52px 44px 48px;
+  }
+  .notice::before{
+    /* torn top edge */
+    content:"";
+    position:absolute; top:0; left:0; right:0; height:10px;
+    background:repeating-linear-gradient(115deg, var(--manila) 0 8px, transparent 8px 16px);
+  }
+  .notice-head{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    gap:16px; flex-wrap:wrap;
+    border-bottom:1px solid var(--line);
+    padding-bottom:18px; margin-bottom:32px;
+  }
+  .notice-head .field{font-size:0.72rem; color:var(--ink-soft);}
+  .notice-head .field b{display:block; color:var(--ink); font-size:0.9rem; font-family:'IBM Plex Mono',monospace; letter-spacing:0.02em; margin-top:2px;}
+  .eyebrow{
+    font-size:0.75rem; color:var(--stamp); font-weight:600; margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 5vw, 3.4rem);
+    line-height:1.06;
+    max-width:15ch;
+  }
+  .hero .sub{
+    margin-top:22px;
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    max-width:52ch;
+  }
+  .stamp{
+    position:absolute;
+    right:-18px; top:38px;
+    width:230px;
+    transform:rotate(-9deg);
+    border:5px solid var(--stamp);
+    border-radius:8px;
+    color:var(--stamp);
+    padding:12px 10px;
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:700;
+    letter-spacing:0.05em;
+    opacity:0;
+    animation:stampIn 0.5s cubic-bezier(.2,.9,.3,1.3) 0.5s forwards;
+    mix-blend-mode:multiply;
+  }
+  .stamp .big{font-size:1.5rem; line-height:1.1; display:block;}
+  .stamp .small{font-size:0.6rem; display:block; margin-top:4px; letter-spacing:0.15em;}
+  @keyframes stampIn{
+    0%{opacity:0; transform:rotate(-9deg) scale(2.4);}
+    60%{opacity:1;}
+    100%{opacity:1; transform:rotate(-9deg) scale(1);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .stamp{animation:none; opacity:1;}
+  }
+  .hero-ctas{
+    margin-top:32px;
+    display:flex; gap:14px; flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--stamp);
+    color:var(--paper);
+    padding:15px 26px;
+    border-radius:3px;
+    font-weight:600;
+    text-decoration:none;
+    font-size:0.98rem;
+    box-shadow:0 8px 20px -8px rgba(168,56,46,0.6);
+  }
+  .btn-secondary{
+    border:1px solid var(--ink);
+    color:var(--ink);
+    padding:15px 26px;
+    border-radius:3px;
+    font-weight:600;
+    text-decoration:none;
+    font-size:0.98rem;
+  }
+  .price-note{
+    margin-top:18px;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+  }
+  .price-note b{color:var(--ink);}
+
+  @media (max-width:640px){
+    .stamp{position:static; transform:rotate(-3deg); margin-top:28px; width:180px;}
+    .notice{padding:36px 22px 32px;}
+  }
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust{
+    background:var(--ink);
+    color:var(--paper);
+    padding:22px 0;
+  }
+  .trust .wrap{
+    display:flex; gap:32px; flex-wrap:wrap; justify-content:space-between;
+    font-size:0.82rem; color:#C9CFD8;
+  }
+  .trust b{color:var(--paper); font-weight:600;}
+
+  /* ---------- TIMELINE ---------- */
+  .section{padding:88px 0;}
+  .section-head{max-width:60ch; margin-bottom:52px;}
+  .section-head .eyebrow{margin-bottom:12px;}
+  .section-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem); line-height:1.15;}
+  .section-head p{color:var(--ink-soft); margin-top:14px; font-size:1.02rem;}
+
+  .timeline{
+    border-left:2px solid var(--stamp);
+    margin-left:12px;
+  }
+  .tl-item{
+    position:relative;
+    padding:0 0 44px 34px;
+  }
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:attr(data-day);
+    position:absolute;
+    left:-13px; top:0;
+    width:24px; height:24px;
+    background:var(--stamp);
+    color:var(--paper);
+    border-radius:50%;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.65rem;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:600;
+  }
+  .tl-item h3{font-size:1.15rem; margin-bottom:6px;}
+  .tl-item p{color:var(--ink-soft); margin:0; max-width:56ch; font-size:0.98rem;}
+
+  /* ---------- OFFER ---------- */
+  .offer-wrap{background:var(--ink); color:var(--paper);}
+  .offer-card{
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:4px;
+    padding:44px;
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:40px;
+    align-items:center;
+  }
+  @media (max-width:760px){
+    .offer-card{grid-template-columns:1fr; padding:32px 26px;}
+  }
+  .offer-card h2{font-size:1.9rem; margin-bottom:14px;}
+  .offer-card ul{list-style:none; padding:0; margin:22px 0 0;}
+  .offer-card li{
+    display:flex; gap:10px; padding:9px 0; border-top:1px solid var(--line);
+    font-size:0.96rem; color:var(--ink-soft);
+  }
+  .offer-card li:first-child{border-top:none;}
+  .offer-card li::before{content:"—"; color:var(--stamp); flex-shrink:0;}
+  .price-box{
+    background:var(--manila);
+    border:1px dashed var(--stamp-dark);
+    border-radius:4px;
+    padding:28px;
+    text-align:center;
+  }
+  .price-box .amount{
+    font-family:'Fraunces', serif;
+    font-size:3.2rem;
+    font-weight:700;
+    color:var(--stamp);
+    line-height:1;
+  }
+  .price-box .amount sup{font-size:1.4rem; top:-1.6em;}
+  .price-box .label{
+    font-size:0.78rem; color:var(--ink-soft); margin-top:6px;
+    text-transform:uppercase; letter-spacing:0.08em;
+  }
+  .price-box .btn-primary{display:block; margin-top:20px; text-align:center;}
+  .price-box .fine{font-size:0.75rem; color:var(--ink-soft); margin-top:14px;}
+
+  /* ---------- FAQ ---------- */
+  .faq-item{
+    border-top:1px solid var(--line);
+    padding:22px 0;
+  }
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  .faq-item summary{
+    cursor:pointer;
+    font-family:'Fraunces', serif;
+    font-size:1.08rem;
+    font-weight:600;
+    list-style:none;
+    display:flex; justify-content:space-between; align-items:center;
+    gap:16px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+";
+    font-family:'IBM Plex Mono',monospace;
+    font-size:1.3rem;
+    color:var(--stamp);
+    flex-shrink:0;
+    transition:transform 0.2s ease;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{color:var(--ink-soft); margin:14px 0 0; max-width:65ch;}
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  .contact{
+    background:var(--stamp);
+    color:var(--paper);
+    padding:80px 0 60px;
+    text-align:center;
+  }
+  .contact h2{color:var(--paper); font-size:clamp(1.8rem,4vw,2.6rem); max-width:20ch; margin:0 auto;}
+  .contact p{color:rgba(255,253,248,0.85); margin-top:16px; font-size:1.02rem;}
+  .contact .btn-primary{
+    background:var(--paper);
+    color:var(--stamp);
+    margin-top:28px;
+    display:inline-block;
+    box-shadow:none;
+  }
+  .contact .phone{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size:2rem;
+    margin-top:14px;
+    text-decoration:none;
+    color:var(--paper);
+  }
+  footer{
+    background:var(--ink);
+    color:#9BA3B0;
+    font-size:0.78rem;
+    padding:26px 0;
+    text-align:center;
+  }
+  footer a{color:#C9CFD8;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">Steady<span>Ground</span> Housing Help</div>
+    <a class="callnow" href="tel:+15555550123">Call (555) 555-0123</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="notice">
+      <div class="stamp">
+        <span class="big">STILL</span>
+        <span class="big">TIME</span>
+        <span class="small">Act Before Your Court Date</span>
+      </div>
+
+      <div class="notice-head">
+        <div class="field">Status<b>Notice Received</b></div>
+        <div class="field">Next Step<b>Response Window Open</b></div>
+        <div class="field">Support Available<b>Same-Day</b></div>
+      </div>
+
+      <div class="eyebrow mono">Eviction Response Support</div>
+      <h1>An eviction notice isn't the end of the story.</h1>
+      <p class="sub">Whatever letter is on your table right now, there are still steps you can take. We'll help you understand your rights, your deadlines, and exactly what to do next — in plain language, without judgment.</p>
+
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Get Help Now — $350</a>
+        <a href="#how-it-works" class="btn-secondary">See how it works</a>
+      </div>
+      <p class="price-note">Flat rate <b>$350</b>. No hidden fees. Confidential intake, same-day scheduling available.</p>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div><b>Confidential</b> — your situation stays private</div>
+    <div><b>Plain-language</b> — no legal jargon, ever</div>
+    <div><b>Fast response</b> — most calls returned same day</div>
+  </div>
+</div>
+
+<section class="section" id="how-it-works">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow mono">How it works</div>
+      <h2>From notice to next steps, in four calls.</h2>
+      <p>Every housing situation moves on a timeline. Here's the general shape of what happens once you reach out — your own deadlines depend on your notice and your local court.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item" data-day="1">
+        <h3>You call or text</h3>
+        <p>Tell us what notice you received and when. We'll ask a few quick questions so we understand your deadlines before we talk strategy.</p>
+      </div>
+      <div class="tl-item" data-day="2">
+        <h3>We review your notice together</h3>
+        <p>We walk through what the notice actually requires, what rights apply in your area, and where you have room to respond.</p>
+      </div>
+      <div class="tl-item" data-day="3">
+        <h3>You get a written action plan</h3>
+        <p>A clear, dated checklist: what to file, who to contact, and what to bring if there's a hearing — so nothing slips through.</p>
+      </div>
+      <div class="tl-item" data-day="4">
+        <h3>We stay reachable</h3>
+        <p>Questions come up after the first call. You can reach us as your situation develops, not just once.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="offer-wrap">
+  <div class="section">
+    <div class="wrap">
+      <div class="offer-card">
+        <div>
+          <div class="eyebrow mono">The offer</div>
+          <h2>One flat rate. Full support.</h2>
+          <p style="color:var(--ink-soft); font-size:1rem;">Housing crises don't come with a warning about cost. That's why this is a single flat fee, agreed upfront, for everything below.</p>
+          <ul>
+            <li>Full review of your eviction notice and timeline</li>
+            <li>Plain-language explanation of your rights and options</li>
+            <li>Written, dated action plan you can follow step by step</li>
+            <li>Guidance preparing for a hearing, if you have one</li>
+            <li>Follow-up support as your situation changes</li>
+          </ul>
+        </div>
+        <div class="price-box">
+          <div class="amount"><sup>$</sup>350</div>
+          <div class="label">Flat rate · one time</div>
+          <a href="#contact" class="btn-primary">Start today</a>
+          <p class="fine">Not a law firm. We don't represent you in court, but we make sure you walk in prepared.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow mono">Questions people ask</div>
+      <h2>Before you call, here's what to know.</h2>
+    </div>
+
+    <details class="faq-item" open>
+      <summary>Is this a law firm? Will someone represent me in court?</summary>
+      <p>No. We're a housing support service, not an attorney. We help you understand your notice, your options, and how to prepare — and we'll point you toward legal aid or an attorney referral when your situation calls for one.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What if my court date is very soon?</summary>
+      <p>Call as soon as you can. Timelines vary by notice type and jurisdiction, and earlier contact gives you more room to act on what we cover together.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Is the $350 the total cost, or are there extra fees?</summary>
+      <p>$350 is the full flat rate for the support described above. If your situation needs something beyond that scope, we'll always tell you before any additional cost, not after.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do I need to have all my paperwork ready to call?</summary>
+      <p>No. Bring whatever you have — even a photo of the notice is fine to start. We'll tell you what else to gather once we know your situation.</p>
+    </details>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Whatever the notice says, you still have a next move.</h2>
+    <p>Reach out today — most calls are returned the same day.</p>
+    <a class="phone" href="tel:+15555550123">(555) 555-0123</a>
+    <a href="sms:+15555550123" class="btn-primary">Text us instead</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    SteadyGround Housing Help — [City, State] · Confidential intake · <a href="mailto:help@example.com">help@example.com</a>
+    <br>Not a substitute for legal advice. Free legal aid may be available in your area regardless of ability to pay.
+  </div>
+</footer>
+
+</body>
+</html>
