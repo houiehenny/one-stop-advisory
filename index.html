@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>One Stop Advisory — Eviction Help</title>
+<meta name="description" content="Facing an eviction notice? Get a clear, confidential action plan for a flat rate of $350. Plain-language guidance, no judgment.">
+<meta property="og:title" content="One Stop Advisory — Eviction Response Support">
+<meta property="og:description" content="Facing an eviction notice? Get a clear, confidential action plan for a flat rate of $350.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://onestopadvisory.org/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="One Stop Advisory — Eviction Response Support">
+<meta name="twitter:description" content="Facing an eviction notice? Get a clear, confidential action plan for a flat rate of $350.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%231B2430'/%3E%3Ctext x='50' y='64' font-family='Georgia,serif' font-weight='700' font-size='46' fill='%23A8382E' text-anchor='middle'%3EOA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -315,10 +324,23 @@
   .contact .phone{
     display:block;
     font-family:'Fraunces', serif;
-    font-size:2rem;
+    font-size:2.6rem;
     margin-top:14px;
     text-decoration:none;
     color:var(--paper);
+  }
+  .contact-links{
+    margin-top:18px;
+    display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+  }
+  .contact-links a{
+    border:1px solid rgba(255,253,248,0.5);
+    color:var(--paper);
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:3px;
+    font-size:0.88rem;
+    font-weight:600;
   }
   footer{
     background:var(--ink);
@@ -328,6 +350,71 @@
     text-align:center;
   }
   footer a{color:#C9CFD8;}
+
+  /* ---------- MOBILE STICKY CTA ---------- */
+  .mobile-cta{
+    display:none;
+    position:fixed; left:0; right:0; bottom:0; z-index:60;
+    background:var(--ink);
+    padding:10px 16px;
+    box-shadow:0 -6px 20px rgba(0,0,0,0.25);
+  }
+  .mobile-cta .row{
+    display:flex; gap:10px;
+  }
+  .mobile-cta a{
+    flex:1;
+    text-align:center;
+    padding:13px 10px;
+    border-radius:3px;
+    font-weight:600;
+    font-size:0.92rem;
+    text-decoration:none;
+  }
+  .mobile-cta a.call{background:var(--stamp); color:var(--paper);}
+  .mobile-cta a.email{border:1px solid rgba(255,253,248,0.4); color:var(--paper);}
+  @media (max-width:760px){
+    .mobile-cta{display:block;}
+    body{padding-bottom:70px;}
+  }
+
+  /* ---------- SCROLL REVEAL ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+
+  /* ---------- LEGAL SECTIONS ---------- */
+  .legal{
+    background:var(--paper);
+    border-top:1px solid var(--line);
+  }
+  .legal .wrap{max-width:760px;}
+  .legal-block{padding:56px 0;}
+  .legal-block:first-child{padding-top:72px;}
+  .legal-block:last-child{padding-bottom:72px; border-top:1px solid var(--line);}
+  .legal-block h2{font-size:1.7rem; margin-bottom:6px;}
+  .legal-block .updated{color:var(--ink-soft); font-size:0.82rem; margin-bottom:28px;}
+  .legal-block h3{font-family:'Fraunces',serif; font-size:1.1rem; margin-top:28px; margin-bottom:8px; color:var(--ink);}
+  .legal-block p, .legal-block li{color:var(--ink-soft); font-size:0.96rem; line-height:1.65;}
+  .legal-block a{color:var(--stamp);}
+  .legal-callout{
+    background:var(--manila);
+    border:1px dashed var(--stamp-dark);
+    border-radius:4px;
+    padding:18px 20px;
+    margin:24px 0;
+    font-size:0.92rem;
+    color:var(--ink);
+  }
 </style>
 </head>
 <body>
@@ -335,7 +422,7 @@
 <div class="topbar">
   <div class="wrap">
     <div class="brand">One Stop <span>Advisory</span></div>
-    <a class="callnow" href="mailto:adminsupport@onestopadvisory.org">Email Us</a>
+    <a class="callnow" href="tel:+18886655560">(888) 665-5560</a>
   </div>
 </div>
 
@@ -359,10 +446,10 @@
       <p class="sub">Whatever letter is on your table right now, there are still steps you can take. We'll help you understand your rights, your deadlines, and exactly what to do next — in plain language, without judgment.</p>
 
       <div class="hero-ctas">
-        <a href="#contact" class="btn-primary">Get Help Now — $350</a>
+        <a href="tel:+18886655560" class="btn-primary">Call Now — (888) 665-5560</a>
         <a href="#how-it-works" class="btn-secondary">See how it works</a>
       </div>
-      <p class="price-note">Flat rate <b>$350</b>. No hidden fees. Confidential intake — we reply within 24 hours of your first message.</p>
+      <p class="price-note">Flat rate <b>$350</b>. No hidden fees. Call <b>(888) 665-5560</b> or message us — we reply within 24 hours.</p>
     </div>
   </div>
 </section>
@@ -372,6 +459,7 @@
     <div><b>Confidential</b> — your situation stays private</div>
     <div><b>Plain-language</b> — no legal jargon, ever</div>
     <div><b>Fast response</b> — you'll hear back within 24 hours</div>
+    <div><b>Now accepting</b> — new clients this week</div>
   </div>
 </div>
 
@@ -384,19 +472,19 @@
     </div>
 
     <div class="timeline">
-      <div class="tl-item" data-day="1">
+      <div class="tl-item reveal" data-day="1">
         <h3>You reach out</h3>
         <p>Tell us what notice you received and when. We reply within 24 hours to understand your deadlines before we talk strategy.</p>
       </div>
-      <div class="tl-item" data-day="2">
+      <div class="tl-item reveal" data-day="2">
         <h3>We review your notice together</h3>
         <p>We walk through what the notice actually requires, what rights apply in your area, and where you have room to respond.</p>
       </div>
-      <div class="tl-item" data-day="3">
+      <div class="tl-item reveal" data-day="3">
         <h3>You get a written action plan</h3>
         <p>A clear, dated checklist: what to file, who to contact, and what to bring if there's a hearing — so nothing slips through.</p>
       </div>
-      <div class="tl-item" data-day="4">
+      <div class="tl-item reveal" data-day="4">
         <h3>We stay reachable</h3>
         <p>Questions come up after the first call. You can reach us as your situation develops, not just once.</p>
       </div>
@@ -407,7 +495,7 @@
 <div class="offer-wrap">
   <div class="section">
     <div class="wrap">
-      <div class="offer-card">
+      <div class="offer-card reveal">
         <div>
           <div class="eyebrow mono">The offer</div>
           <h2>One flat rate. Full support.</h2>
@@ -423,7 +511,7 @@
         <div class="price-box">
           <div class="amount"><sup>$</sup>350</div>
           <div class="label">Flat rate · one time</div>
-          <a href="#contact" class="btn-primary">Start today</a>
+          <a href="tel:+18886655560" class="btn-primary">Call to start</a>
           <p class="fine">Typical full process: 30–45 days. Not a law firm — we don't represent you in court, but we make sure you walk in prepared.</p>
         </div>
       </div>
@@ -438,19 +526,19 @@
       <h2>Before you call, here's what to know.</h2>
     </div>
 
-    <details class="faq-item" open>
+    <details class="faq-item reveal" open>
       <summary>Is this a law firm? Will someone represent me in court?</summary>
       <p>No. We're a housing support service, not an attorney. We help you understand your notice, your options, and how to prepare — and we'll point you toward legal aid or an attorney referral when your situation calls for one.</p>
     </details>
-    <details class="faq-item">
+    <details class="faq-item reveal">
       <summary>What if my court date is very soon?</summary>
       <p>Call as soon as you can. Timelines vary by notice type and jurisdiction, and earlier contact gives you more room to act on what we cover together.</p>
     </details>
-    <details class="faq-item">
+    <details class="faq-item reveal">
       <summary>Is the $350 the total cost, or are there extra fees?</summary>
       <p>$350 is the full flat rate for the support described above. If your situation needs something beyond that scope, we'll always tell you before any additional cost, not after.</p>
     </details>
-    <details class="faq-item">
+    <details class="faq-item reveal">
       <summary>Do I need to have all my paperwork ready to call?</summary>
       <p>No. Bring whatever you have — even a photo of the notice is fine to start. We'll tell you what else to gather once we know your situation.</p>
     </details>
@@ -461,17 +549,97 @@
   <div class="wrap">
     <h2>Whatever the notice says, you still have a next move.</h2>
     <p>Reach out today — we reply within 24 hours.</p>
-    <a class="phone" href="mailto:adminsupport@onestopadvisory.org">adminsupport@onestopadvisory.org</a>
-    <a href="https://instagram.com/onestopadvisor07" class="btn-primary" target="_blank" rel="noopener">Message us on Instagram</a>
+    <a class="phone" href="tel:+18886655560">(888) 665-5560</a>
+    <div class="contact-links">
+      <a href="mailto:adminsupport@onestopadvisory.org">Email us</a>
+      <a href="https://instagram.com/onestopadvisor07" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="legal" id="privacy">
+  <div class="wrap">
+    <div class="legal-block">
+      <h2>Privacy Policy</h2>
+      <p class="updated">Last updated: August 2026</p>
+      <p>One Stop Advisory ("we," "us," or "our") provides eviction response support services. This section explains what information we collect when you contact us or use this website, and how we handle it.</p>
+
+      <h3>Information we collect</h3>
+      <p>When you reach out by phone, email, text, or Instagram, we may collect your name, contact details, and information about your housing situation, including details from any notice you share with us. We do not collect payment information through this website.</p>
+
+      <h3>How we use it</h3>
+      <p>We use the information you share only to provide the eviction response support you've requested — reviewing your notice, explaining your options, and preparing your action plan. We do not sell your information to third parties.</p>
+
+      <h3>Confidentiality</h3>
+      <p>Details about your housing situation are treated as confidential. We only share information with outside parties (such as a legal aid organization or referral attorney) with your knowledge, when doing so is part of helping you find further support.</p>
+
+      <h3>Data retention</h3>
+      <p>We keep client information only as long as reasonably necessary to provide our services and maintain basic business records, after which it is deleted or securely discarded.</p>
+
+      <h3>Your choices</h3>
+      <p>You can ask us at any time what information we have on file for you, or request that we delete it, by emailing <a href="mailto:adminsupport@onestopadvisory.org">adminsupport@onestopadvisory.org</a>.</p>
+    </div>
+
+    <div class="legal-block" id="terms">
+      <h2>Terms of Service</h2>
+      <p class="updated">Last updated: August 2026</p>
+
+      <div class="legal-callout">
+        <strong>One Stop Advisory is not a law firm and does not provide legal representation.</strong> We offer educational, plain-language guidance to help you understand an eviction notice and prepare your own response. We do not appear in court on your behalf, and nothing we provide should be treated as legal advice.
+      </div>
+
+      <h3>Our services</h3>
+      <p>For a flat fee of $350, we review the eviction notice or paperwork you provide, explain your general rights and options, and prepare a written action plan. Typical engagements run 30–45 days from initial contact to resolution, though this varies by case and local court timelines.</p>
+
+      <h3>Payment</h3>
+      <p>The $350 flat rate covers the services described on our website. Any additional work outside that scope will be discussed and agreed with you before it's billed.</p>
+
+      <h3>No guarantee of outcome</h3>
+      <p>Every eviction case depends on facts, local law, and court decisions outside our control. We cannot and do not guarantee any particular outcome, including whether an eviction will be delayed, contested successfully, or avoided.</p>
+
+      <h3>Referrals</h3>
+      <p>Where appropriate, we may refer you to a legal aid organization or licensed attorney. We are not responsible for the services provided by any third party we refer you to.</p>
+
+      <h3>Client responsibilities</h3>
+      <p>You're responsible for providing accurate information about your situation and for meeting any deadlines set by the court or your notice — our action plan is a guide, not a substitute for your own follow-through.</p>
+
+      <h3>Contact</h3>
+      <p>Questions about either of these sections can be sent to <a href="mailto:adminsupport@onestopadvisory.org">adminsupport@onestopadvisory.org</a> or by calling <a href="tel:+18886655560">(888) 665-5560</a>.</p>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    One Stop Advisory — Cobb County, GA · Confidential intake · <a href="mailto:adminsupport@onestopadvisory.org">adminsupport@onestopadvisory.org</a>
+    One Stop Advisory — Cobb County, GA · <a href="tel:+18886655560">(888) 665-5560</a> · <a href="mailto:adminsupport@onestopadvisory.org">adminsupport@onestopadvisory.org</a>
     <br>Not a substitute for legal advice. Free legal aid may be available in your area regardless of ability to pay.
+    <br><a href="#privacy">Privacy Policy</a> · <a href="#terms">Terms of Service</a>
   </div>
 </footer>
+
+<div class="mobile-cta">
+  <div class="row">
+    <a class="call" href="tel:+18886655560">Call (888) 665-5560</a>
+    <a class="email" href="mailto:adminsupport@onestopadvisory.org">Email</a>
+  </div>
+</div>
+
+<script>
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function(el){ observer.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+</script>
 
 </body>
 </html>
