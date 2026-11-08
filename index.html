@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!doctype html>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>One Stop Advisory — Eviction, Loan Modification & Credit Repair Support</title>
-<meta name="description" content="Stop an eviction, clear one from your record, modify a loan, or repair your credit. Clear, confidential action plans — plain language, no judgment.">
-<meta property="og:title" content="One Stop Advisory — Housing & Financial Recovery Support">
-<meta property="og:description" content="Eviction response, eviction removal, loan modification, and credit repair support — clear plans, flat rates, no judgment.">
+<title>One Stop Advisory — Eviction Response Support</title>
+<meta name="description" content="Facing an eviction notice? Get a clear, confidential action plan to respond before your deadline — plain language, no judgment. Flat $450.">
+<meta property="og:title" content="One Stop Advisory — Eviction Response Support">
+<meta property="og:description" content="Eviction response support — a clear, written plan to respond before your deadline. Flat $450, no judgment.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://onestopadvisory.org/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%231B2430'/%3E%3Ctext x='50' y='64' font-family='Georgia,serif' font-weight='700' font-size='46' fill='%23A8382E' text-anchor='middle'%3EOA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
   :root{
     --manila:#E8DFC8;
@@ -118,8 +117,8 @@
   .price-box .fine{font-size:0.75rem; color:var(--ink-soft); margin-top:14px;}
 
   .stats-wrap{background:var(--manila-dark);}
-  .stats-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:26px; text-align:center;}
-  @media (max-width:820px){.stats-grid{grid-template-columns:1fr 1fr;}}
+  .stats-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px; text-align:center;}
+  @media (max-width:820px){.stats-grid{grid-template-columns:1fr;}}
   .stat-card{background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:30px 20px;}
   .stat-num{font-family:'Fraunces', serif; font-size:2.4rem; font-weight:700; color:var(--stamp); display:block;}
   .stat-label{font-size:0.82rem; color:var(--ink-soft); margin-top:6px;}
@@ -181,7 +180,7 @@
 </head>
 <body>
 
-<div class="scroll-progress" id="scrollProgress"></div>
+<div class="scroll-progress" id="scrollProgress" style="width: 0%;"></div>
 
 <div class="topbar">
   <div class="wrap">
@@ -213,15 +212,15 @@
         <div class="field">Support Available<b>Reply Within 24 Hrs</b></div>
       </div>
 
-      <div class="eyebrow mono">Housing & Financial Recovery Support</div>
+      <div class="eyebrow mono">Eviction Response Support</div>
       <h1>A notice on the table isn't the end of the story.</h1>
-      <p class="sub">Stop an eviction before it happens, clear one already on your record, work out a loan modification, or repair your credit. Four clear paths forward — plain language, no judgment.</p>
+      <p class="sub">Got an eviction notice? We help you understand it, know your options, and prepare your response before your deadline — plain language, no judgment.</p>
 
       <div class="hero-ctas">
         <a href="tel:+18772739990" class="btn-primary">Call Now — (877) 273-9990</a>
         <a href="https://jot-forms-app.web.app/forms/onestopadvisory/fill" target="_blank" rel="noopener" class="btn-secondary">Start Online</a>
       </div>
-      <p class="price-note">Flat-rate service plans starting at <b>$350</b>. No hidden fees. Call <b>(877) 273-9990</b> or start your intake form — we reply within 24 hours.</p>
+      <p class="price-note">Eviction response is a flat <b>$450</b>. Paying online adds a 2% processing fee and a $0.02 network fee (<b>$459.02</b> total). Call <b>(877) 273-9990</b> or start your intake form — we reply within 24 hours.</p>
     </div>
   </div>
 </section>
@@ -239,22 +238,17 @@
   <div class="wrap">
     <div class="section-head center on-dark">
       <div class="eyebrow mono">Our Services</div>
-      <h2>Four ways we help you regain footing.</h2>
-      <p>Pick the tab that matches your situation — each is a flat-rate or quoted engagement built around a written, dated action plan.</p>
+      <h2>Eviction response, start to finish.</h2>
+      <p>One flat-rate service built around a written, dated action plan for your eviction notice.</p>
     </div>
 
-    <div class="tabs" role="tablist">
-      <button class="tab-btn active" data-tab="response" role="tab" aria-selected="true">Eviction Response</button>
-      <button class="tab-btn" data-tab="removal" role="tab" aria-selected="false">Eviction Removal</button>
-      <button class="tab-btn" data-tab="loan" role="tab" aria-selected="false">Loan Modification</button>
-      <button class="tab-btn" data-tab="credit" role="tab" aria-selected="false">Credit Repair</button>
-    </div>
 
-    <div class="tab-panels">
+
+      <div class="tab-panels">
 
       <div class="tab-panel active" id="panel-response" role="tabpanel">
         <div>
-          <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M12 3 4 6.5v5c0 5 3.4 8.7 8 9.5 4.6-.8 8-4.5 8-9.5v-5L12 3Z"/><path d="M12 8v5"/><circle cx="12" cy="16" r="0.6" fill="var(--brass)"/></svg></div>
+          <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M12 3 4 6.5v5c0 5 3.4 8.7 8 9.5 4.6-.8 8-4.5 8-9.5v-5L12 3Z"></path><path d="M12 8v5"></path><circle cx="12" cy="16" r="0.6" fill="var(--brass)"></circle></svg></div>
           <h3>Eviction Response — Stop the Clock</h3>
           <p class="desc">Facing an active eviction notice? This service helps you respond within your deadline to temporarily halt the process and protect your options.</p>
           <ul>
@@ -266,77 +260,14 @@
           </ul>
         </div>
         <div class="price-box">
-          <div class="amount"><sup>$</sup>350</div>
+          <div class="amount"><sup>$</sup>450</div>
           <div class="label">Flat rate · one time</div>
           <a href="https://jot-forms-app.web.app/forms/onestopadvisory/fill" target="_blank" rel="noopener" class="btn-primary">Start My Response</a>
           <a href="tel:+18772739990" class="btn-secondary">Or call to start</a>
-          <p class="fine">Typical process: 30–45 days. Not a law firm — we don't represent you in court, but we make sure you walk in prepared.</p>
+          <p class="fine">Paying online: $459.02 total ($450 + 2% processing fee + $0.02 network fee). Typical process: 30–45 days. Not a law firm — we don't represent you in court, but we make sure you walk in prepared.</p>
         </div>
       </div>
 
-      <div class="tab-panel" id="panel-removal" role="tabpanel">
-        <div>
-          <div class="panel-icon"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/><path d="m15 15 4 4m0-4-4 4" stroke="var(--stamp)"/></svg></div>
-          <h3>Eviction Removal — Clear Your Record</h3>
-          <p class="desc">Already have an eviction filing on your record? This service helps you pursue having it removed or sealed from the court record so it stops following you.</p>
-          <ul>
-            <li>Review of your existing eviction case and court record</li>
-            <li>Eligibility check for expungement or record sealing in your state</li>
-            <li>Assistance preparing your removal request</li>
-            <li>Guidance navigating the court's filing process</li>
-            <li>Follow-up until your record is resolved</li>
-          </ul>
-        </div>
-        <div class="price-box">
-          <div class="amount"><sup>$</sup>350</div>
-          <div class="label">Starting at · varies by case</div>
-          <a href="tel:+18772739990" class="btn-primary">Call for a Consultation</a>
-          <p class="fine">Final cost depends on your state and case history — call us and we'll confirm your exact rate before any fee is set.</p>
-        </div>
-      </div>
-
-      <div class="tab-panel" id="panel-loan" role="tabpanel">
-        <div>
-          <div class="panel-icon"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="1.5"/><path d="M3 10h18"/><path d="M7 15h4"/></svg></div>
-          <h3>Loan Modification Support</h3>
-          <p class="desc">Guidance preparing and organizing a loan modification request to present to your lender or servicer.</p>
-          <ul>
-            <li>Review of your loan and hardship details</li>
-            <li>Document checklist tailored to your lender</li>
-            <li>Plain-language explanation of modification options</li>
-            <li>Written application timeline</li>
-            <li>Support through lender communication</li>
-          </ul>
-        </div>
-        <div class="price-box">
-          <div class="amount small">Custom Quote</div>
-          <div class="label">Based on loan complexity</div>
-          <a href="https://jot-forms-app.web.app/forms/loanmodapplication/fill" target="_blank" rel="noopener" class="btn-primary">Request a Quote</a>
-          <a href="tel:+18772739990" class="btn-secondary">Or call to ask</a>
-          <p class="fine">No fee is collected before work begins.</p>
-        </div>
-      </div>
-
-      <div class="tab-panel" id="panel-credit" role="tabpanel">
-        <div>
-          <div class="panel-icon"><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 9.5h19"/><path d="M6 14.5h5"/></svg></div>
-          <h3>Credit Repair Guidance</h3>
-          <p class="desc">A structured plan to review your credit report, identify disputable items, and rebuild your standing over time.</p>
-          <ul>
-            <li>Full credit report review</li>
-            <li>Identification of disputable items</li>
-            <li>Written dispute &amp; rebuilding plan</li>
-            <li>Plain-language explanation of your rights</li>
-            <li>Monthly progress check-ins</li>
-          </ul>
-        </div>
-        <div class="price-box">
-          <div class="amount"><sup>$</sup>100</div>
-          <div class="label">Per bureau · sale price</div>
-          <a href="tel:+18772739990" class="btn-primary">Call for a Consultation</a>
-          <p class="fine">Sale pricing — 3 bureaus (Equifax, Experian, TransUnion) typically run together. No fee is collected before work begins.</p>
-        </div>
-      </div>
 
     </div>
   </div>
@@ -346,7 +277,6 @@
   <div class="wrap">
     <div class="stats-grid">
       <div class="stat-card reveal"><span class="stat-num" data-count="24">0</span><span class="stat-label">Hour reply window</span></div>
-      <div class="stat-card reveal"><span class="stat-num" data-count="4">0</span><span class="stat-label">Services under one roof</span></div>
       <div class="stat-card reveal"><span class="stat-num" data-count="45">0</span><span class="stat-label">Day typical process (max)</span></div>
       <div class="stat-card reveal"><span class="stat-num" data-count="1">0</span><span class="stat-label">Flat fee, agreed upfront</span></div>
     </div>
@@ -358,13 +288,13 @@
     <div class="section-head">
       <div class="eyebrow mono">How it works</div>
       <h2>From notice to next steps, in four calls.</h2>
-      <p>Every case moves on a timeline. Here's the general shape of what happens once you reach out — your own deadlines depend on your notice, court, lender, or creditor.</p>
+      <p>Every case moves on a timeline. Here's the general shape of what happens once you reach out — your own deadlines depend on your notice and your court.</p>
     </div>
 
     <div class="timeline">
       <div class="tl-item reveal" data-day="1">
         <h3>You reach out</h3>
-        <p>Tell us what's going on and which service fits — eviction response, eviction removal, loan modification, or credit repair. We reply within 24 hours.</p>
+        <p>Tell us about your eviction notice and your deadline. We reply within 24 hours.</p>
       </div>
       <div class="tl-item reveal" data-day="2">
         <h3>We review your situation together</h3>
@@ -389,32 +319,28 @@
       <h2>Before you call, here's what to know.</h2>
     </div>
 
-    <details class="faq-item reveal" open>
-      <summary>What's the difference between eviction response and eviction removal?</summary>
-      <p>Eviction response is for an active notice — it's about acting within your deadline to temporarily stop or delay the eviction process. Eviction removal is for a case that's already on your record — it's about pursuing expungement or sealing so it no longer shows up on background or rental checks. Many clients start with response and move to removal later.</p>
-    </details>
-    <details class="faq-item reveal">
+    <details class="faq-item reveal" open="">
       <summary>Is this a law firm? Will someone represent me in court?</summary>
       <p>No. We're a housing and financial support service, not an attorney. We help you understand your notice, your options, and how to prepare — and we'll point you toward legal aid or an attorney referral when your situation calls for one.</p>
     </details>
     <details class="faq-item reveal">
       <summary>What if my court date or deadline is very soon?</summary>
-      <p>Call as soon as you can. Timelines vary by notice type, court, lender, and jurisdiction, and earlier contact gives you more room to act on what we cover together.</p>
+      <p>Call as soon as you can. Timelines vary by notice type, court, and jurisdiction, and earlier contact gives you more room to act on what we cover together.</p>
     </details>
     <details class="faq-item reveal">
       <summary>Is the listed price the total cost, or are there extra fees?</summary>
-      <p>Eviction response is a flat $350, and eviction removal starts at $350 depending on your case. Credit repair runs $100 per bureau at our current sale price. Loan modification is quoted based on complexity. Any fees are agreed with you in writing before work begins — never billed as a surprise afterward.</p>
+      <p>Eviction response is a flat $450. If you pay online, a 2% processing fee and a $0.02 network fee are added, for a total of $459.02. That's shown before you pay — nothing is billed as a surprise afterward.</p>
     </details>
     <details class="faq-item reveal">
       <summary>Can I start the process online instead of calling?</summary>
-      <p>Yes — eviction response and loan modification have online intake forms on this page. For eviction removal and credit repair, give us a call to set up your consultation.</p>
+      <p>Yes — tap Start Online to fill out the intake form and pay. Prefer to talk first? Call us.</p>
     </details>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <h2>Whatever the notice or letter says, you still have a next move.</h2>
+    <h2>Whatever the notice says, you still have a next move.</h2>
     <p>Reach out today — we reply within 24 hours.</p>
     <div class="contact-ctas">
       <a class="btn-primary" href="https://jot-forms-app.web.app/forms/onestopadvisory/fill" target="_blank" rel="noopener">Start Online</a>
@@ -433,16 +359,16 @@
     <div class="legal-block">
       <h2>Privacy Policy</h2>
       <p class="updated">Last updated: August 2026</p>
-      <p>One Stop Advisory ("we," "us," or "our") provides eviction response, eviction removal, loan modification, and credit repair support services. This section explains what information we collect when you contact us or use this website, and how we handle it.</p>
+      <p>One Stop Advisory ("we," "us," or "our") provides eviction response support services. This section explains what information we collect when you contact us or use this website, and how we handle it.</p>
 
       <h3>Information we collect</h3>
-      <p>When you reach out by phone, email, text, Instagram, or our online intake form, we may collect your name, contact details, and information about your housing, court, or financial situation, including details from any notice, court record, loan document, or credit report you share with us. Payment information submitted through our intake forms is processed by our third-party form provider and is not stored on this website.</p>
+      <p>When you reach out by phone, email, text, Instagram, or our online intake form, we may collect your name, contact details, and information about your housing or court situation, including details from any notice or court record you share with us. Online payments are handled by our payment processor and are not stored on this website.</p>
 
       <h3>How we use it</h3>
       <p>We use the information you share only to provide the support you've requested — reviewing your situation, explaining your options, and preparing your action plan. We do not sell your information to third parties.</p>
 
       <h3>Confidentiality</h3>
-      <p>Details about your situation are treated as confidential. We only share information with outside parties (such as a legal aid organization, court, lender, or referral attorney) with your knowledge, when doing so is part of helping you find further support.</p>
+      <p>Details about your situation are treated as confidential. We only share information with outside parties (such as a legal aid organization, court, or referral attorney) with your knowledge, when doing so is part of helping you find further support.</p>
 
       <h3>Data retention</h3>
       <p>We keep client information only as long as reasonably necessary to provide our services and maintain basic business records, after which it is deleted or securely discarded.</p>
@@ -456,23 +382,23 @@
       <p class="updated">Last updated: August 2026</p>
 
       <div class="legal-callout">
-        <strong>One Stop Advisory is not a law firm and does not provide legal representation.</strong> We offer educational, plain-language guidance to help you understand your situation and prepare your own response or filings. We do not appear in court on your behalf, and nothing we provide should be treated as legal, financial, or credit-repair legal advice.
+        <strong>One Stop Advisory is not a law firm and does not provide legal representation.</strong> We offer educational, plain-language guidance to help you understand your situation and prepare your own response or filings. We do not appear in court on your behalf, and nothing we provide should be treated as legal advice.
       </div>
 
       <h3>Our services</h3>
-      <p>Eviction response support is offered for a flat fee of $350, covering review of your notice, an explanation of your general rights and options, and a written action plan. Eviction removal starts at $350 and varies by case; credit repair is $100 per bureau at current sale pricing; loan modification is quoted individually based on complexity. Scope and final pricing are confirmed with you in writing before any fee is collected. Typical engagements run 30–45 days from initial contact to resolution, though this varies by case, court, lender, and local timelines.</p>
+      <p>Eviction response support is offered for a flat fee of $450, covering review of your notice, an explanation of your general rights and options, and a written action plan. Typical engagements run 30–45 days from initial contact to resolution, though this varies by case, court, and local timelines.</p>
 
       <h3>Payment</h3>
-      <p>Listed and quoted rates cover the services described on our website and confirmed with you directly. Any additional work outside that scope will be discussed and agreed with you before it's billed. For loan modification, credit repair, and eviction removal engagements, fees are not collected in advance of the corresponding work being performed, consistent with applicable federal and state requirements.</p>
+      <p>The $450 rate covers the eviction response service described on this website. Online payments add a 2% processing fee and a $0.02 network fee, for a total of $459.02, shown before you pay. Any additional work outside that scope will be discussed and agreed with you before it's billed.</p>
 
       <h3>No guarantee of outcome</h3>
-      <p>Every case depends on facts, applicable law, court decisions, and lender or creditor decisions outside our control. We cannot and do not guarantee any particular outcome, including whether an eviction will be delayed or avoided, a record will be removed or sealed, a loan will be modified, or a credit score will improve by any specific amount.</p>
+      <p>Every case depends on facts, applicable law, and court decisions outside our control. We cannot and do not guarantee any particular outcome, including whether an eviction will be delayed or avoided.</p>
 
       <h3>Referrals</h3>
       <p>Where appropriate, we may refer you to a legal aid organization, HUD-approved housing counselor, or licensed attorney. We are not responsible for the services provided by any third party we refer you to.</p>
 
       <h3>Client responsibilities</h3>
-      <p>You're responsible for providing accurate information about your situation and for meeting any deadlines set by a court, lender, or creditor — our action plan is a guide, not a substitute for your own follow-through.</p>
+      <p>You're responsible for providing accurate information about your situation and for meeting any deadlines set by a court — our action plan is a guide, not a substitute for your own follow-through.</p>
 
       <h3>Contact</h3>
       <p>Questions about either of these sections can be sent to <a href="mailto:adminsupport@onestopadvisory.org">adminsupport@onestopadvisory.org</a> or by calling <a href="tel:+18772739990">(877) 273-9990</a>.</p>
@@ -577,5 +503,6 @@
   }
 </script>
 
-</body>
-</html>
+
+
+</body></html>
